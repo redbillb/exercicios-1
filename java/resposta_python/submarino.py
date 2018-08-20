@@ -65,8 +65,8 @@ class Submarino(object):
 #		
 
 class SubmarinoTest(unittest.TestCase):
-	def testFun(self):
-		sub = Submarino()
+	sub = Submarino()
+	def testVirar(self):		
 		# Teste procedimento Virar
 		sub.movimentar('R')
 		self.assertEqual('Leste', sub.dir)
@@ -91,6 +91,7 @@ class SubmarinoTest(unittest.TestCase):
 		sub.movimentar('LLLLRRRRLRLRLRRRRRRLLRLLLL')
 		self.assertEqual('Norte', sub.dir)
 
+	def testAndar(self):
 		# TESTE PROCEDIMENTO ANDAR
 		sub.movimentar('MMMMM')
 		self.assertEqual(5 == sub.y)
@@ -99,6 +100,7 @@ class SubmarinoTest(unittest.TestCase):
 		sub.movimentar('RRMMMM')
 		self.assertEqual(-2 == sub.x)
 
+	def testProfundidade(self):
 		# TESTE PROFUNDIDADE
 		sub.movimentar('D')
 		self.assertEqual(-1 == sub.z)
